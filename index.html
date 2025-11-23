@@ -1,0 +1,328 @@
+ <!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LokaLingo - Angeles City Guide & Translator</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- App Header -->
+
+        <header>
+
+            <h1>LokaLingo</h1>
+
+            <p>Angeles City Guide & Translator</p>
+
+        </header>
+
+
+        <!-- Main Navigation -->
+
+        <nav class="main-nav">
+
+            <div class="nav-item active" data-tab="translator">
+
+                <i class="fas fa-language"></i>
+
+                <span>Translator</span>
+
+            </div>
+
+            <div class="nav-item" data-tab="food">
+
+                <i class="fas fa-utensils"></i>
+
+                <span>Restaurants</span>
+
+            </div>
+
+            <div class="nav-item" data-tab="attractions">
+
+                <i class="fas fa-landmark"></i>
+
+                <span>Attractions</span>
+
+            </div>
+
+            <div class="nav-item" data-tab="shopping">
+
+                <i class="fas fa-shopping-bag"></i>
+
+                <span>Souvenir</span>
+
+            </div>
+
+            <div class="nav-item" data-tab="emergency">
+
+                <i class="fas fa-first-aid"></i>
+
+                <span>Emergency</span>
+
+            </div>
+
+            <div class="nav-item" data-tab="transportation">
+
+                <i class="fas fa-bus"></i>
+
+                <span>Transportation</span>
+
+            </div>
+
+        </nav>
+
+
+        <!-- Content Sections -->
+
+        <main>
+
+            <!-- Translator Section -->
+
+            <section id="translator" class="content-section active">
+
+                <div class="section-header">
+
+                    <h2>Translator</h2>
+
+                </div>
+
+                <div class="translation-container">
+
+                    <div class="language-selector">
+
+                        <div class="from-lang">
+
+                            <label for="from-language">From:</label>
+
+                            <select id="from-language">
+
+                                <option value="english">English</option>
+
+                                <option value="tagalog">Tagalog</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="swap-btn">
+
+                            <i class="fas fa-exchange-alt"></i>
+
+                        </div>
+
+                        <div class="to-lang">
+
+                            <label for="to-language">To:</label>
+
+                            <select id="to-language">
+
+                                <option value="kapampangan">Kapampangan</option>
+
+                                <option value="tagalog">Tagalog</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="translation-input">
+
+                        <textarea id="input-text" placeholder="Enter text to translate..."></textarea>
+
+                        <button id="translate-btn">Translate</button>
+
+                    </div>
+
+
+                    <div class="translation-output">
+
+                        <h3>Translation:</h3>
+
+                        <div id="output-text"></div>
+
+                        <div class="output-actions">
+
+                            <button id="speak-btn"><i class="fas fa-volume-up"></i></button>
+
+                            <button id="copy-btn"><i class="fas fa-copy"></i></button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="common-phrases">
+
+                        <h3>Common Phrases</h3>
+
+                        <div class="phrase-list">
+
+                            <!-- Phrases will be populated by JavaScript -->
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Food Section -->
+
+            <section id="food" class="content-section">
+
+                <div class="section-header">
+
+                    <h2>Food in Angeles City</h2>
+
+                </div>
+
+                <div class="food-list">
+
+                    <!-- Food items will be populated by JavaScript -->
+
+                </div>
+
+            </section>
+
+
+            <!-- Attractions Section -->
+
+            <section id="attractions" class="content-section">
+
+                <div class="section-header">
+
+                    <h2>Attractions in Angeles City</h2>
+
+                </div>
+
+                <div class="attractions-list">
+
+                    <!-- Attractions will be populated by JavaScript -->
+
+                </div>
+
+            </section>
+
+
+            <!-- Shopping Section -->
+
+            <section id="shopping" class="content-section">
+
+                <div class="section-header">
+
+                    <h2>Shopping in Angeles City</h2>
+
+                </div>
+
+                <div class="shopping-list">
+
+                    <!-- Shopping items will be populated by JavaScript -->
+
+                </div>
+
+            </section>
+
+
+            <!-- Emergency Section -->
+
+            <section id="emergency" class="content-section">
+
+                <div class="section-header">
+
+                    <h2>Emergency Information</h2>
+
+                </div>
+
+               <div class="emergency-list" id="emergency-list"></div>
+
+
+            </section>
+
+
+            <!-- Transportation Section -->
+
+            <section id="transportation" class="content-section">
+
+                <div class="section-header">
+
+                    <h2>Transportation Options</h2>
+
+                </div>
+
+                <div class="transportation-list">
+
+                    <!-- Transportation options will be populated by JavaScript -->
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- Food Detail Modal -->
+
+        <div id="detail-modal" class="modal">
+
+            <div class="modal-content">
+
+                <span class="close-modal">&times;</span>
+
+                <div id="modal-content">
+
+                    <!-- Modal content will be populated by JavaScript -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Map View Modal -->
+
+        <div id="map-modal" class="modal" aria-hidden="true">
+
+            <div class="modal-content">
+
+                <span class="close-map" id="close-map" aria-label="Close">×</span>
+
+                <h3 id="map-title">Map</h3>
+
+                <div id="map-content">
+
+                    <iframe id="map-frame" src="" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="javascript.js"></script>
+
+</body>
+
+</html>
+
